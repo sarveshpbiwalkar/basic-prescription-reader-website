@@ -7,21 +7,225 @@
     <title>PRESCRIPTION READER</title>
     <link rel="shortcut icon" type="image/jpg" href="logo.jpg">
     <style>
-    body{background-color: rgb(122, 218, 103);background-image: url(back1.webp);}
-    button{background-color: rgb(173, 167, 167);size: 1000%;}
+    body{background-image: url(back1.webp);background-size: cover;background-repeat: no-repeat;}
+    button{background-color: #80808090;cursor: pointer;}
     </style>
 </head>
 <body>
-    <h1 style="background-color: rgb(149, 214, 136);">Wel-come to prescription reader</h1>
+    <h1 style="background-color: rgb(149, 214, 136);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Wel-come to prescription reader</h1>
     <h2 style="text-align: right;">
-    <a href=""><button><b>HOME</b></button></a>
-    <a href=""><button><b>DASHBOARD</b></button></a>
-    <a href=""><button><b>MENU</b></button></a>
-    <a href=""><button><b>Logout</b></button></a>
+        <a href=""><button><b>HOME</b></button></a>
+        <a href=""><button><b>DASHBOARD</b></button></a>
+        <a href=""><button><b>MENU</b></button></a>
+        <a href=""><button><b>Logout</b></button></a>
     </h2>
-    <h2>
 
-    </h2>
+    <div class="ocrAppRow" style="text-align: center;align-content: center;">
+        <div id="inputTypesContainer" class="ocrSizes btn-group btn-group-lg " role="group">
+            <label class="custom-file-upload btn btn-secondary margbottom upfile selected" onclick="selectCamera(3)">
+                <i></i>
+                File   
+            </label>
+            <label for="ocrCaptureFile" class="custom-file-upload upcam margbottom btn btn-secondary nonselecteduploadoption" onclick="selectCamera(1)">
+                <i></i>
+                Camera    
+            </label>
+            <input id="ocrCaptureFile" style="display: none" type="file" accept="image/*" capture="" name="UploadFileInput">
+            <label class="custom-file-upload btn margbottom upurl btn-secondary nonselecteduploadoption" onclick="selectCamera(2);">
+                <i></i>
+                URL
+            </label>
+        
+        </div>
+
+<div id="filesUploadBlock" style="display:flexbox; flex-flow: row wrap; justify-content: center;">
+    <div class="filedrop-container width-for-mobile" id="inputfile">
+        <div class="filedrop filedrop-mvc fileplacement width-for-mobile" id="filedrop" style="margin: 0px;" ondragover="event.preventDefault();" ondrop="imgdropped(event);">
+            <label for="UploadFileInput" class="uplbl" id="labelforuploadfile">
+            <span class="uploadlabel labelforuploadfile" id="uploadlabel">Browse file</span>
+            <p class="DropUploadFiles">or drag it in this box *</p>
+            </label>
+            <input type="file" class="uploadfileinput" id="UploadFileInput" name="UploadFileInput" accept=".JPEG,.JPG,.BMP,.TIFF,.GIF,.PNG,.EMF,.SVG,.EPS,.TIF" style="display:none;">
+            <div id="fileUpload" style="display:none;">
+                <span class="filename filenameExt">
+                <p></p>
+                <div class="inputedfile">
+                    <div class="inputedfilealign">
+                        <label id="fileNameLabel" for="uploadfileinput" class="custom-file-upload"></label>
+                        <svg class="icon icon_criss_cross" onclick="removefile()"><use xlink:href=""></use></svg>
+                    </div>
+                </div>
+                <p></p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="filedrop-input-url" class="fileupload file-upload-input-container" style="display: none;">
+    <span class="filename">
+    <div class="filedrop-container width-for-mobile" id="urlinput">
+        <input type="text" id="externalUrlInput" onkeyup="inputurl(event);" onchange="inputurlmobile();" class="form-control externalUrlInput" name="externalUrlInput" placeholder="Enter web address (URL)">
+        <span class="fileLinkHolder" id="fileUrlHolder">
+        <a class="file-link-holder-cancel1" id="cnsltxt" onclick="removeurlmobile();">
+        <svg class="icon icon_cnsl"><use xlink:href=""></use></svg>
+        </a>
+        </span>
+        <div class="inputedurlalign" id="inputedurlalign" style="display:none;">
+            <label id="urlNameLabel" for="externalUrlInput" class="custom-url-upload"></label>
+            <svg class="icon icon_criss_cross_url" onclick="removeurlmobile();"><use xlink:href=""></use></svg>
+        </div>
+    </div>
+    </span>
+</div>
+
+<style>
+element.style {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+element.style {
+    margin:0;
+}
+.fileplacement {
+    min-height: 196px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+a, aside, b, body, button, div, footer, header, html, i, img, input, li, ol, section, span, textarea, ul {
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 5px;
+}
+
+user agent stylesheet
+.ocrAppRow {
+    display: block;
+    width: 30px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 3px;
+}
+.asposetools {
+    text-align: center;
+    background: #fcfcfc;
+    padding: 0;
+}
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fcfcfc;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+}
+@media (max-width: 959px)
+html {
+    background-color: #fcfcfc;
+    font-family: Open Sans,sans-serif;
+    font-size: 16px;
+    position: relative;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+.uploadlabel {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    font-size: large;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.labelforuploadfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 32px;
+    gap: 4px;
+    background-color: #80808090;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 159.89px;
+    margin: 0 auto;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+.dropbox-dropin-btn{
+    height:20px!important;
+    width:200px!important;
+    padding: 0!important;
+}
+.google-drv-btn{
+    width:202px;
+    height:22px;
+    margin-right:40px;
+    display: inline-block;
+    font-family: "Lucida Grande", "Segoe UI", "Tahoma", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #282727;
+    text-decoration: none;
+    padding: 1px 7px 5px 3px;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    border-color: #dedede;
+    border-bottom-color: #cacaca;
+    background: linear-gradient(to bottom, #fcfcfc 0%, #f5f5f5 100%);
+}
+
+.dropgooglein-btn-status:before{
+    content: "\f3aa";
+}
+
+.dropgooglein-btn-status{
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400!important;
+    color: #146ebe;   
+    margin: 0 5px 0 2px;
+}
+
+#IDrive {
+    height: 26px;
+    width: 100%;
+}
+
+.agdb {
+    width: 20px;
+}
+
+</style>
+
+<div class="terms-area" style="width:100%;">
+    <span>*By uploading your files or using our service you agree with our </span>
+    <a href="" rel="nofollow noreferrer" target="_blank">Terms of Service</a>
+    <span> and </span>
+    <a href="" rel="nofollow noreferrer" target="_blank">Privacy Policy</a>
+</div>
+<div>
+    <h3>Click Here for Result</h3>
+    <a href="" title="Click for output!"><button  style="border-radius: 10px;font-size: large;">Convert</button></a>
+</div>
 
 </body>
 </html>

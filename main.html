@@ -7,17 +7,18 @@
     <title>PRESCRIPTION READER</title>
     <link rel="shortcut icon" type="image/jpg" href="logo.jpg">
     <style>
-    body{background-image: url(back1.webp);background-size: cover;background-repeat: no-repeat;}
+    body{background-image: url(back1.webp);}
     button{background-color: #80808090;cursor: pointer;}
     </style>
 </head>
 <body>
-    <h1 style="background-color: rgb(149, 214, 136);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Wel-come to prescription reader</h1>
+    <h1 style="background-color: rgba(0, 255, 110, 0.663); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Wel-come to prescription reader</h1>
     <h2 style="text-align: right;">
-        <a href=""><button><b>HOME</b></button></a>
+        <div class="drop">
+        <a href="page1.html"><button><b>HOME</b></button></a>
         <a href=""><button><b>DASHBOARD</b></button></a>
-        <a href=""><button><b>MENU</b></button></a>
-        <a href=""><button><b>Logout</b></button></a>
+        <button><b>MENU</b></button>
+        <a href="index.html"><button><b>Logout</b></button></a></div>
     </h2>
 
     <div class="ocrAppRow" style="text-align: center;align-content: center;">
@@ -40,9 +41,9 @@
 
 <div id="filesUploadBlock" style="display:flexbox; flex-flow: row wrap; justify-content: center;">
     <div class="filedrop-container width-for-mobile" id="inputfile">
-        <div class="filedrop filedrop-mvc fileplacement width-for-mobile" id="filedrop" style="margin: 0px;" ondragover="event.preventDefault();" ondrop="imgdropped(event);">
+        <div class="filedrop filedrop-mvc fileplacement width-for-mobile" id="filedrop" style="outline: dashed grey;display:inline-flex;inline-size: 500px;" ondragover="event.preventDefault();" ondrop="imgdropped(event);">
             <label for="UploadFileInput" class="uplbl" id="labelforuploadfile">
-            <span class="uploadlabel labelforuploadfile" id="uploadlabel">Browse file</span>
+            <span class="uploadlabel labelforuploadfile" id="uploadlabel" style="background-color: black;color: whitesmoke;">Browse file</span>
             <p class="DropUploadFiles">or drag it in this box *</p>
             </label>
             <input type="file" class="uploadfileinput" id="UploadFileInput" name="UploadFileInput" accept=".JPEG,.JPG,.BMP,.TIFF,.GIF,.PNG,.EMF,.SVG,.EPS,.TIF" style="display:none;">
@@ -87,6 +88,9 @@ element.style {
 element.style {
     margin:0;
 }
+.drop button:hover{
+    color:white;
+}
 .fileplacement {
     min-height: 196px;
     display: flex;
@@ -106,7 +110,7 @@ user agent stylesheet
 .ocrAppRow {
     display: block;
     width: 30px;
-    padding: 10px;
+    padding: 5px;
     border: 5px solid gray;
     margin: 3px;
 }
@@ -126,17 +130,6 @@ body {
     background-color: #fcfcfc;
 }
 
-html {
-    font-family: sans-serif;
-    line-height: 1.15;
-}
-@media (max-width: 959px)
-html {
-    background-color: #fcfcfc;
-    font-family: Open Sans,sans-serif;
-    font-size: 16px;
-    position: relative;
-}
 *, ::before, ::after {
     box-sizing: border-box;
 }
@@ -164,13 +157,7 @@ html {
     width: 159.89px;
     margin: 0 auto;
 }
-*, ::before, ::after {
-    box-sizing: border-box;
-}
 
-*, ::before, ::after {
-    box-sizing: border-box;
-}
 .dropbox-dropin-btn{
     height:20px!important;
     width:200px!important;
@@ -210,10 +197,6 @@ html {
     width: 100%;
 }
 
-.agdb {
-    width: 20px;
-}
-
 </style>
 
 <div class="terms-area" style="width:100%;">
@@ -224,7 +207,7 @@ html {
 </div>
 <div>
     <h3>Click Here for Result</h3>
-    <a href="" title="Click for output!"><button  style="border-radius: 10px;font-size: large;">Convert</button></a>
+    <a href="" title="Click for output!"><button style="border-radius: 10px;font-size: large;">Convert</button></a>
 </div>
 
 </body>

@@ -11,7 +11,7 @@
             text-align: center;
             background-image: url(back1.webp);
         }
-        
+        input{border-radius: 5px;}
     </style>
 </head>
 <body>
@@ -21,7 +21,7 @@
         <h1 style="color: darkblue;font-family: Cambria;background-color: chartreuse;">Wel-come to prescription reader using OCR</h1>
     </div>
     <div style="background-image: url(sa-logo.png);background-repeat: no-repeat;background-size: 20%;"><h2>Signup</h2>
-        <form action="signup.php" method="get">
+        <form action="index.html" method="get">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
 
@@ -37,21 +37,24 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br>
             
-            <input type="submit" value="Signup" style="font-size: medium;" >
+            <input type="submit" value="Signup" style="font-size: medium;cursor: pointer;">
         </form>
     </div>
 	
 	<hr>
 	
 	<h2>Login</h2>
-	<form action="main.html" method="get">
+	<form action="page1.html" method="get">
 		<label for="username">Username:</label>
 		<input type="text" id="username" name="username" required><br><br>
 		
 		<label for="password">Password:</label>
 		<input type="password" id="password" name="password" required><br><br>
 		
-		<input type="submit" value="Login" style="font-size: medium;">
+		<input type="submit" value="Login" style="font-size: medium;cursor: pointer;">
 	</form>
+    <footer>
+        <p style="margin-top: 100px;">2023 copyright © All Rights Reserved. Prescription Reader</p>
+    </footer>
 </body>
 </html>

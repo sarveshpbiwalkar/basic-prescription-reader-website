@@ -11,19 +11,18 @@
         background-image: url(back1.webp);background-size: cover;background-repeat: no-repeat;
         align-content: center;
     }
-    .drop button:hover{
-        color: white;
+    button{
+        cursor: pointer;
     }
     </style>
 </head>
 <body>
     <h1 style="background-color: rgba(0, 255, 110, 0.663); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Wel-come to prescription reader</h1>
     <h2 style="text-align: right;">
-        <div class="drop">
         <a href="page1.html"><button><b>HOME</b></button></a>
         <a href=""><button><b>DASHBOARD</b></button></a>
         <button><b>MENU</b></button>
-        <a href="index.html"><button><b>Logout</b></button></a></div>
+        <a href="index.html"><button><b>Logout</b></button></a>
     </h2>
     <div class="gallery-grid">
         <div class="gallery-item">
@@ -88,6 +87,15 @@
             justify-items: center;
             justify-content: space-between;
             justify-content: center;
+        }
+        .gallery-item img:hover{
+            opacity: 0.7;
+            width: 310px;
+            height: 210px;
+        }
+        button:hover{
+            color: white;
+            background-color: gray;
         }
         
     </style>

@@ -4,58 +4,174 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRESCRIPTION READER</title>
+    <title>Prescription Reader</title>
     <link rel="shortcut icon" type="image/jpg" href="logo.jpg">
     <style>
         body{
             text-align: center;
             background-image: url(back1.webp);
+            background-repeat: no-repeat;
+            background-color: rgb(92, 191, 230);
         }
-        input{border-radius: 5px;}
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .contain {
+            text-align: centre;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+  
+        .contain span {
+            display: block;
+        }
+  
+        .text1 {
+            color: rgb(0, 0, 0);
+            font-size: 70px;
+            font-weight: 700;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            background: yellowgreen;
+            position: relative;
+            animation: text 5s 1;
+        }
+  
+        .text2 {
+            font-size: 30px;
+            color:black;
+            font-family: Georgia, serif;
+        }
+  
+        @keyframes text {
+            0% {
+                color: whitesmoke;
+                margin-bottom: -40px;
+            }
+  
+            30% {
+                letter-spacing: 25px;
+                margin-bottom: -40px;
+            }
+  
+            85% {
+                letter-spacing: 8px;
+                margin-bottom: -40px;
+            }
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            justify-items: center;
+            justify-content: space-between;
+            justify-content: center;
+        }
+        button:hover{
+            color: white;
+            background-color: gray;
+        }
+        .logsign {
+            position: relative;
+            width: 50%;
+            margin-left: 25%;
+        }
+        .logsign img {
+            width: 70%;
+            height: auto;
+            border-radius: 20px;
+            border-style: inset;
+        }
+        .logsign .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #555;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .logsign .btn:hover {
+            background-color: black;
+        }
+        .logsign a{
+            background-color: grey;
+            color: black;
+            font-size: larger;
+        }
+        .logsign a:hover{
+            background-color: black;
+            font-size: x-large;
+            color: whitesmoke;
+        }
+        a, aside, b, body, button, div, footer, header, html, i, img, input, li, ol, section, span, textarea, ul {
+            box-sizing: border-box;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        button{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <h5>Contact: +91 98637 62782</h5>
-    <h5>Made by: Sarvesh Biwalkar (C23315)</h5>
-    <div class="transbox">
-        <h1 style="color: darkblue;font-family: Cambria;background-color: chartreuse;">Wel-come to prescription reader using OCR</h1>
+    <div>
+        <h5>Contact: +91 98637 62782</h5>
+        <h5>Made by: Sarvesh Biwalkar (C23315)</h5>
     </div>
-    <div style="background-repeat: no-repeat;background-size: 20%;"><h2>Signup</h2>
-        <form action="index.html" method="get">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required><br><br>
-
-            <label for="first_name">First Name:</label>
-            <input type="first_name" id="first_name" name="first_name" required><br><br>
-
-            <label for="last_name">Last Name:</label>
-            <input type="last_name" id="last_name" name="last_name" required><br><br>
-            
-            <label for="mob_no">Mobile No.:</label>
-            <input type="mob_no" id="mob_no" name="mob_no" required><br><br>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
-            
-            <input type="submit" value="Signup" style="font-size: medium;cursor: pointer;">
-        </form>
+    <h1>
+        <div class="contain">
+            <div class="raw">
+                <span class="text1">PRESCRIPTION READER</span>
+                <span class="text2">Using OCR Technology</span>
+            </div>
+        </div>
+    </h1>
+    <div><h2 style="text-align: right; margin-top: 12%;">
+        <a href=""><button><b>Contact Us</b></button></a>
+        <a href=""><button><b>MENU</b></button></a>
+        <a href="log.html"><button><b>SignUp</b></button></a>
+        <a href="log.html"><button><b>LogIn</b></button></a>
+    </h2></div>
+    <div></div>
+    <div></div>
+    <h2>
+        Reading a doctor's handwritten prescription is a challenge!!!
+    </h2>
+    <h2>
+        Convert it into your understandable language.
+    </h2>
+    <div class="logsign" style="font-size: larger;">
+        <img src="un.png" alt="click to login or sign up"><div></div>
+        <a class="btn" href="log.html">LogIn / SignUp</a>
     </div>
-	
-	<hr>
-	
-	<h2>Login</h2>
-	<form action="page1.html" method="get">
-		<label for="username">Username:</label>
-		<input type="text" id="username" name="username" required><br><br>
-		
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="password" required><br><br>
-		
-		<input type="submit" value="Login" style="font-size: medium;cursor: pointer;">
-	</form>
+    <div></div>
+    <div class="row" style="background-color:rgba(245, 248, 249, 0.459);">
+        <div class="container col-lg-12" style="color:rgb(0, 0, 0);">
+            <div class="row">
+                <div class="col-sm-9">
+                     <br><h2>Download the SA PRESCRIPTION READER App Now</h2>            
+                     <h4>Download the Prescription Reader App Now and take advantage of all the amazing features.</h4>
+                </div>
+                <div class="col-sm-3">
+                    <a href="" target="_blank"><img alt="Get it on Google Play" src="apple.png" style=" width: 165px;"></a>
+        <a href="" target="_blank">
+            <img alt="Get it on Google Play" src="google_play.png" style=" width: 165px;">
+        </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <p style="margin-top: 100px;">2023 copyright © All Rights Reserved. Prescription Reader</p>
     </footer>
